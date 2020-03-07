@@ -1,0 +1,36 @@
+<div class="container" id="movie-detail">
+
+    <h1 [ngStyle]="{'text-align': 'center'}">Titulo de la pelicula</h1>
+    <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center" fxLayoutAlign.xs="center center" fxFlexFill>
+        
+        <div fxFlex="40" class="sec1" fxFlex.xs="55" >
+        <div [ngStyle]="{'margin.px': 15}">
+            
+            <img src="https://m.media-amazon.com/images/M/MV5BMTg4MDk1ODExN15BMl5BanBnXkFtZTgwNzIyNjg3MDE@._V1_SX300.jpg">
+        </div>   
+        </div>
+        <div fxFlex="60" class="sec2" fxFlex.xs="45">
+            
+            <mat-list role="list">
+                <mat-list-item role="listitem"><b>Year:</b> </mat-list-item>
+                <mat-list-item role="listitem"><b>Released:</b> </mat-list-item>
+                <mat-list-item role="listitem"><b>Genre:</b></mat-list-item>
+                <mat-list-item role="listitem"><b>Actors:</b></mat-list-item>
+                <mat-list-item role="listitem"><b>Lenguage:</b></mat-list-item>
+                <mat-list-item role="listitem"><b>Country:</b></mat-list-item>
+                <mat-list-item role="listitem"><b>Adwards:</b></mat-list-item>
+                <mat-list-item role="listitem"><b>imdbRating:</b></mat-list-item>
+                
+            </mat-list>
+            <mat-divider></mat-divider>
+            <div [ngStyle]="{'margin.px': 15}">
+                <h2> Plot </h2>
+                <p>In the mythical continent of Westeros, several powerful families fight for control of the Seven Kingdoms. As conflict erupts in the kingdoms of men, an ancient enemy rises once again to threaten them all. Meanwhile, the last heirs of a recently usurped dynasty plot to take back their homeland from across the Narrow Sea.</p>
+            </div>
+        </div>
+
+      
+
+    </div>
+
+</div>

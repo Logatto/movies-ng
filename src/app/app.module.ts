@@ -13,12 +13,13 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MainNavComponent } from './main-nav/main-nav.component';
-// import { LayoutModule } from '@angular/cdk/layout'; 
+
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 
 import { MatGridListModule } from '@angular/material/grid-list';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     AppComponent,
     HomeComponent,
     MainNavComponent,
+    MovieDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatInputModule,
     MatButtonModule,
     MatDividerModule,
-    // LayoutModule,
     MatListModule,
     MatCardModule,
     MatGridListModule,
