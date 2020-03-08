@@ -10,6 +10,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { MainNavComponent } from './layouts/main-nav/main-nav.component';
 import { MovieDetailComponent } from './pages/movie-detail/movie-detail.component';
 import { FavoritesComponent } from './pages/favorites/favorites.component';
+import { LoginComponent } from './pages/login/login.component';
 // import { MovieCardComponent } from './shared/components/movie-card/movie-card.component';
 
 
@@ -20,6 +21,7 @@ import { FavoritesComponent } from './pages/favorites/favorites.component';
     MainNavComponent,
     MovieDetailComponent,
     FavoritesComponent,
+    LoginComponent,
     // MovieCardComponent,
   ],
   imports: [
