@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './pages/home/home.component';
 import { MainNavComponent } from './layouts/main-nav/main-nav.component';
 import { MovieDetailComponent } from './pages/movie-detail/movie-detail.component';
+import { FavoritesComponent } from './pages/favorites/favorites.component';
 // import { MovieCardComponent } from './shared/components/movie-card/movie-card.component';
 
 
@@ -18,6 +19,7 @@ import { MovieDetailComponent } from './pages/movie-detail/movie-detail.componen
     HomeComponent,
     MainNavComponent,
     MovieDetailComponent,
+    FavoritesComponent,
     // MovieCardComponent,
   ],
   imports: [
