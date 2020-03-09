@@ -20,16 +20,9 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <!--<span>movies-ng</span>-->
 
-      <div class="nav-search">
-        <mat-form-field appearance="outline">
-          <mat-label>Search Movie</mat-label>
-          <input matInput >
-          <mat-icon matSuffix>search</mat-icon>
-        </mat-form-field>
-      </div>
 
+      <app-search-nav></app-search-nav>
 
 
 

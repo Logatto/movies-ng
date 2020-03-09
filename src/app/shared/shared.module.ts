@@ -7,9 +7,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { MovieCardComponent } from './components/movie-card/movie-card.component';
 import { MovieListComponent } from './components/movie-list/movie-list.component';
+import { SearchNavComponent } from './components/search-nav/search-nav.component';
 
 @NgModule({
-  declarations: [MovieCardComponent, MovieListComponent],
+  declarations: [SearchNavComponent, MovieCardComponent, MovieListComponent],
   imports: [
     CommonModule,
     MaterialModule,
@@ -20,8 +21,9 @@ import { MovieListComponent } from './components/movie-list/movie-list.component
     CommonModule,
     MaterialModule,
     FlexLayoutModule,
+    SearchNavComponent,
     MovieCardComponent,
-    MovieListComponent
+    MovieListComponent,
   ]
 })
 export class SharedModule { }

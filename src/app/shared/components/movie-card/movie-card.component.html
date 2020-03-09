@@ -1,9 +1,9 @@
 <mat-card >
-  <a [routerLink]="['/movie-detail']">
-  <img mat-card-image src="https://m.media-amazon.com/images/M/MV5BMTg4MDk1ODExN15BMl5BanBnXkFtZTgwNzIyNjg3MDE@._V1_SX300.jpg">
+  <a [routerLink]="['/movie-detail', movie.imdbID]">
+  <img mat-card-image [src]="movie.Poster">
   </a>
   <mat-card-content>
-      <a [routerLink]="['/movie-detail']"> Titulo de la pelicula </a>
+      <a [routerLink]="['/movie-detail/', movie.imdbID]" > {{ movie.Title }} </a>
   </mat-card-content>
   <mat-card-actions>
       <button mat-button>
