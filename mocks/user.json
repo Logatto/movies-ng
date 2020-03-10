@@ -1,0 +1,8 @@
+{
+  "/users": {
+    "post": {
+      "data": {"id":1,"user": "Wbeimar Logatto"},
+      "status": true
+    }
+  }
+}
