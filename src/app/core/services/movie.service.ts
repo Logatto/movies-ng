@@ -3,6 +3,8 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Movie } from '../models/movie.class';
 import { catchError, map } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
+import { IMovie } from '../models/movie';
+import { isNullOrUndefined } from 'util';
 
 @Injectable({
   providedIn: 'root'
@@ -14,25 +16,39 @@ export class MovieService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public searchMovies(search: String = "game"): Observable<Movie[]> {
+  public searchMovies(search: String = "game"): Observable<IMovie[]> {
     const options = { params: new HttpParams({fromString: `s=${search}`}) };
     return this.httpClient
-      .get<Movie[]>(this.REST_API_SERVER, options )
+      .get<IMovie[]>(this.REST_API_SERVER, options )
       .pipe(
         map((data) => { return 'Search' in data ? data.Search.map(movie => new Movie(movie)) : [] }) ,
         catchError(this.handleError )
       );
   }
 
-
-  public getMovieById(movieId: String): Observable<Movie> {
+  public getMovieById(movieId: String): Observable<IMovie> {
     const options = { params: new HttpParams({fromString: `i=${movieId}&plot=full`}) };
     return this.httpClient
-      .get<Movie>(this.REST_API_SERVER, options )
+      .get<IMovie>(this.REST_API_SERVER, options )
       .pipe(
         map((movie) => { return ('Response' in movie && movie['Response'] == 'True') ? new Movie(movie) : null }) ,
         catchError(this.handleError )
       );
+  }
+
+  addFavorite(movie: IMovie): void {
+    let favorites_string = JSON.stringify(movie);
+    localStorage.setItem("favorites", favorites_string);
+  }
+
+  getFavorites(): IMovie[] {
+    let favorites_string = localStorage.getItem("favorites");
+    if (!isNullOrUndefined(favorites_string)) {
+      let movies: IMovie[] = JSON.parse(favorites_string);
+      return movies;
+    } else {
+      return null;
+    }
   }
 
 
