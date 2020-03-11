@@ -21,15 +21,14 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin(user: IUser){
-    console.log("FORM ", user);
-
-    this.userService.userLogin(user).subscribe( (response) => {
-      console.log("response ", response);
-      if(response){
-        this.userService.setUser(response);
-        this.router.navigate(['/favorites']);
-      }
-    });
+    if(user.user && user.password){
+      this.userService.userLogin(user).subscribe( (response) => {
+        if(response){
+          this.userService.setUser(response);
+          this.router.navigate(['/favorites']);
+        }
+      });
+    }
   }
 
 }

@@ -7,7 +7,7 @@
   </mat-card-content>
   <mat-card-actions>
       <button mat-button>
-          <mat-icon>favorite</mat-icon>
+          <mat-icon (click)="actionFavorite()" [color]="colorFavorite()">favorite</mat-icon>
       </button>
   </mat-card-actions>
 </mat-card>

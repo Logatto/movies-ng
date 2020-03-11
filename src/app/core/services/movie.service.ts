@@ -37,8 +37,10 @@ export class MovieService {
   }
 
   addFavorite(movie: IMovie): void {
-    let favorites_string = JSON.stringify(movie);
-    localStorage.setItem("favorites", favorites_string);
+    let favorite_movie = (movie);
+    let favorites = this.getFavorites();
+    favorites.push(favorite_movie);
+    localStorage.setItem("favorites", JSON.stringify(favorites));
   }
 
   getFavorites(): IMovie[] {
@@ -47,7 +49,24 @@ export class MovieService {
       let movies: IMovie[] = JSON.parse(favorites_string);
       return movies;
     } else {
-      return null;
+      return [];
+    }
+  }
+
+  removeFavorite(movie: IMovie){
+    const favoritesMovies = this.getFavorites().filter( value => value.imdbID !== movie.imdbID );
+    localStorage.setItem("favorites", JSON.stringify(favoritesMovies));
+  }
+
+  existMovie(movie: IMovie){
+    return this.getFavorites().find((value => value.imdbID === movie.imdbID)) ? true : false;
+  }
+
+  addOrRemoveFavorite(movie: IMovie){
+    if(this.existMovie(movie))  {
+      this.removeFavorite(movie);
+    }else{
+      this.addFavorite(movie);
     }
   }
 
