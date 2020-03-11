@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   word: String;
 
   constructor(private movieService: MovieService, route: ActivatedRoute) {
-    const { word } = route.params.getValue();
+    const { word } = (route.params as any).getValue();
     if(word){
       this.word = word;
     }

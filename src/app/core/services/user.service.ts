@@ -21,7 +21,7 @@ export class UserService {
     return this.httpClient
       .post<IUser>(this.REST_API_SERVER + '/users', { user, password} )
       .pipe(
-        map((user) => { return (user.status) ? new User(user.data) : null }) ,
+        map((user) => { return (user['status']) ? new User(user['data']) : null }) ,
         catchError(this.handleError )
       );
   }

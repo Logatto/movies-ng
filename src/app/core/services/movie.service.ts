@@ -21,7 +21,9 @@ export class MovieService {
     return this.httpClient
       .get<IMovie[]>(this.REST_API_SERVER, options )
       .pipe(
-        map((data) => { return 'Search' in data ? data.Search.map(movie => new Movie(movie)) : [] }) ,
+        map((data) => {
+          return 'Search' in data ? (data['Search'] as any).map(movie => new Movie(movie)) : []
+        }) ,
         catchError(this.handleError )
       );
   }

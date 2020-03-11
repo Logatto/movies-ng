@@ -14,7 +14,7 @@ export class MovieDetailComponent implements OnInit {
   movie: Movie;
 
   constructor(private movieService: MovieService, route: ActivatedRoute) {
-    const { movieId } = route.params.getValue();
+    const { movieId } = (route.params as any).getValue();
     if(movieId){
       this.movieId = movieId;
     }

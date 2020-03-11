@@ -12,14 +12,14 @@
         <div fxFlex="60" class="sec2" fxFlex.xs="45">
 
             <mat-list role="list">
-                <mat-list-item role="listitem"><b>Year:</b> {{ movie.Year }} </mat-list-item>
-                <mat-list-item role="listitem"><b>Released:</b> {{ movie.Released }} </mat-list-item>
-                <mat-list-item role="listitem"><b>Genre:</b> {{ movie.Genre }}</mat-list-item>
-                <mat-list-item role="listitem"><b>Actors:</b> {{ movie.Actors }}</mat-list-item>
-                <mat-list-item role="listitem"><b>Language:</b> {{ movie.Language }} </mat-list-item>
-                <mat-list-item role="listitem"><b>Country:</b> {{ movie.Country }}</mat-list-item>
-                <mat-list-item role="listitem"><b>Awards:</b> {{ movie.Awards }}</mat-list-item>
-                <mat-list-item role="listitem"><b>imdbRating:</b> {{ movie.imdbRating }} </mat-list-item>
+                <mat-list-item role="listitem"><b [ngStyle]="{'margin-right.px' : 10}">Year:</b> <span>{{ movie.Year }}</span> </mat-list-item>
+                <mat-list-item role="listitem"><b [ngStyle]="{'margin-right.px' : 10}">Released:</b> {{ movie.Released }} </mat-list-item>
+                <mat-list-item role="listitem"><b [ngStyle]="{'margin-right.px' : 10}">Genre:</b> {{ movie.Genre }}</mat-list-item>
+                <mat-list-item role="listitem"><b [ngStyle]="{'margin-right.px' : 10}">Actors:</b> {{ movie.Actors }}</mat-list-item>
+                <mat-list-item role="listitem"><b [ngStyle]="{'margin-right.px' : 10}">Language:</b> {{ movie.Language }} </mat-list-item>
+                <mat-list-item role="listitem"><b [ngStyle]="{'margin-right.px' : 10}">Country:</b> {{ movie.Country }}</mat-list-item>
+                <mat-list-item role="listitem"><b [ngStyle]="{'margin-right.px' : 10}">Awards:</b> {{ movie.Awards }}</mat-list-item>
+                <mat-list-item role="listitem"><b [ngStyle]="{'margin-right.px' : 10}">imdbRating:</b> {{ movie.imdbRating }} </mat-list-item>
 
             </mat-list>
             <mat-divider></mat-divider>
